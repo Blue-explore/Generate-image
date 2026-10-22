@@ -1,0 +1,38 @@
+{
+  "name": "dsh-tool-image-ark",
+  "version": "0.1.1",
+  "description": "generate_image tool for DeepSeek Harness: text-to-image via Volcengine Ark (doubao-seedream)",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "image-generation",
+    "volcengine",
+    "ark",
+    "seedream"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.2.0-rc.2"
+  }
+}

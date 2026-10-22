@@ -1,0 +1,11 @@
+# dsh-tool-image-ark 的 bundle patch 层。
+#
+# 这里 insert 的是一条 profile 级插件行：ctx.tools.register 在根上下文注册的是
+# 全局工具（"Register globally or in the calling agent scope"），所以 generate_image
+# 对所有 agent 可见，不必改任何 agent preset。
+#
+# 故意不写 config：模型与超时都由代码默认值兜底。这样你在自己的 profile
+# cordis.patch.yml 里覆盖同一 id 时（例如只填 apiKey），不会把别的配置项覆盖掉。
+- insert:
+    - id: tool-image-ark
+      name: dsh-tool-image-ark
